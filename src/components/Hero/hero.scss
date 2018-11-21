@@ -1,0 +1,62 @@
+@keyframes dash {
+  from {
+    stroke-dashoffset: 3800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: currentColor;
+  }
+}
+
+.hero {
+  background: $color-background;
+  color: $color-text;
+
+  .container {
+    display: grid;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.hero-content {
+  width: 40%;
+}
+
+.hero-title {
+  font-size: 74px;
+  max-width: 520px;
+}
+
+.hero-text {
+  max-width: 490px;
+  font-size: 130%;
+  line-height: 1.66;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+
+  svg {
+    stroke-dasharray: 3800;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    animation: dash 5s ease-in-out 1s;
+    animation-fill-mode: both;
+    height: 100%;
+  }
+}
