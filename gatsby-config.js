@@ -22,22 +22,16 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`,
-      },
-    },
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-svgr',
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-svgr',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -48,6 +42,12 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
