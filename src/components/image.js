@@ -1,6 +1,6 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+// import React from 'react'
+// import { StaticQuery, graphql } from 'gatsby'
+// import Img from 'gatsby-image'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,20 +13,107 @@ import Img from 'gatsby-image'
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-const Image = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-  />
-)
-export default Image
+// const Image = ({name}) => (
+//   <StaticQuery
+//     query={graphql`
+//       query {
+//         godaddy: file(relativePath: { eq: "logos/godaddy-pro.png" }) {
+//           childImageSharp {
+//             fluid(maxWidth: 300) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         mogl: file(relativePath: { eq: "logos/moglcom.png" }) {
+//           childImageSharp {
+//             fluid(maxWidth: 300) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         merryjane: file(relativePath: { eq: "logos/merryjane.png" }) {
+//           childImageSharp {
+//             fluid(maxWidth: 300) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         bing: file(relativePath: { eq: "logos/bing-certified-pro.png" }) {
+//           childImageSharp {
+//             fluid(maxWidth: 300) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         persista: file(relativePath: { eq: "logos/persista.png" }) {
+//           childImageSharp {
+//             fluid(maxWidth: 300) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         internetbrands: file(relativePath: { eq: "logos/internet-brand.png" }) {
+//           childImageSharp {
+//             fluid(maxWidth: 300) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     `}
+//     render={data => <Img fluid={data.${name}.childImageSharp.fluid} />}
+//   />
+// )
+
+// const Image = (name) => (
+//   <img fluid={data.${name}.childImageSharp.fluid}
+// )
+
+// export default Image
+
+// export const logoQuery = graphql`
+//   query {
+//     godaddy: file(relativePath: { eq: "logos/godaddy-pro.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 300) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     mogl: file(relativePath: { eq: "logos/moglcom.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 300) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     merryjane: file(relativePath: { eq: "logos/merryjane.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 300) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     bing: file(relativePath: { eq: "logos/bing-certified-pro.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 300) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     persista: file(relativePath: { eq: "logos/persista.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 300) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     internetbrands: file(relativePath: { eq: "logos/internet-brand.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 300) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `

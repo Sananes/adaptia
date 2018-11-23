@@ -1,17 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { injectGlobal } from 'react-emotion'
-import { theme } from '../utils/colors'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header/header'
+import '../styles/_reset.scss'
 import './layout.scss'
-
-injectGlobal`
-  body {
-    color: ${theme.primary};
-  }
-`;
 
 const Layout = ({ children }) => (
   <StaticQuery

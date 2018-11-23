@@ -1,0 +1,21 @@
+.companies {
+  .companies-container {
+    @extend %container;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.companies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 20%));
+  margin-bottom: 50px;
+  grid-gap: 32px;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+
+}

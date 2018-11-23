@@ -1,0 +1,18 @@
+.services {
+  background: $color-primary;
+
+  .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 48px;
+
+  svg {
+    margin-bottom: 20px;
+  }
+}

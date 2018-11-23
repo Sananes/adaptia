@@ -1,53 +1,26 @@
 import React from 'react'
-import styled from 'react-emotion'
-import { theme, breakpoint } from '../../utils/colors'
-import { Container, Divider, SectionHeader } from '../../utils/extends'
-import { rhythm } from '../../utils/typography'
 
+// Assets
 import SVG from '../svg'
-
-const ServicesLayout = styled.div`
-  background: ${theme.primary};
-  color: ${theme.secondary};
-`
-
-const ServiceList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${rhythm(3)};
-  padding-bottom: ${rhythm(3)};
-
-  @media (max-width: ${breakpoint.medium}) {
-    grid-template-columns: 1fr;
-    grid-gap: ${rhythm(2)};
-  }
-
-  svg {
-    margin-bottom: ${rhythm(0.5)};
-  }
-`
-
-const ServiceItemLi = styled.li`
-  list-style: none;
-`
+import './services.scss'
 
 const ServiceItem = ({icon, title, text}) => (
   <li className={icon ? icon : 'list-item'}>
-    <SVG icon={icon ? icon : 'nothing'} width='48'></SVG>
+    <SVG icon={icon ? icon : 'nothing'} width={48}></SVG>
     <h3>{title ? title : 'Untitled'}</h3>
     <p>{text ? text: 'Untitled'}</p>
   </li>
 )
 
 const Services = () => (
-  <ServicesLayout>
-    <div class={Container}>
-      <SectionHeader>
-        <Divider />
-        <h2>What we do</h2>
-        <p>We deliver robust marketing and design services to some of the biggest and most influential brands and businesses with an entrepreneurial spirit. We’ve successfully built startup projects and seen them through acquisition, grown traffic for major web properties and designed some of the most cutting edge e-commerce experiences.</p>
-      </SectionHeader>
-      <ServiceList>
+  <section className="services">
+    <div className="container">
+      <div className="section-header">
+        <div className="divider"></div>
+        <h2 className="title">What we do</h2>
+        <p className="text">We deliver robust marketing and design services to some of the biggest and most influential brands and businesses with an entrepreneurial spirit. We’ve successfully built startup projects and seen them through acquisition, grown traffic for major web properties and designed some of the most cutting edge e-commerce experiences.</p>
+      </div>
+      <ul className="service-list">
         <ServiceItem
           icon="marketing"
           title="Marketing"
@@ -71,9 +44,9 @@ const Services = () => (
           title="Branding"
           text="Bringing more than 10 years experience in optimizing organic SEO campaigns across a variety of media. We specialize in growing organic visibility to content on the internet’s most valuable properties. We've worked in crafting large scale SEO strategy for some of the world's most innovative companies and bring a wealth of experience in the digital space to our client's brands."
         />
-      </ServiceList>
+      </ul>
     </div>
-  </ServicesLayout>
+  </section>
 )
 
 export default Services

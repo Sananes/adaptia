@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: `Adaptia`,
+  title: `Adaptia Design`,
   siteTitleShort: `Marketing & Branding Agency`,
   siteDescription: `A Marketing & Branding Agency.`,
   siteUrl: `https://adaptiadesign.com`,

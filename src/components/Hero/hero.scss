@@ -18,10 +18,12 @@
 
 .hero {
   background: $color-background;
-  color: $color-text;
+  color: $color-primary;
 
-  .container {
+  .hero-container {
+    @extend %container;
     display: grid;
+    grid-template-rows: 1fr min-content;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -31,6 +33,7 @@
 
 .hero-content {
   width: 40%;
+  margin-top: 100px;
 }
 
 .hero-title {
@@ -59,4 +62,9 @@
     animation-fill-mode: both;
     height: 100%;
   }
+}
+
+.hero-arrow {
+  padding-bottom: 50px;
+  color: $color-primary;
 }
