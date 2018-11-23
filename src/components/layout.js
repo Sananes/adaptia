@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled, { css, injectGlobal } from 'react-emotion'
+import { injectGlobal } from 'react-emotion'
 import { theme } from '../utils/colors'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header/header'
-// import './layout.scss'
+import './layout.scss'
 
 injectGlobal`
   body {

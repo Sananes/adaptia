@@ -1,9 +1,11 @@
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import { theme, breakpoint } from '../../utils/colors'
 import { Container } from '../../utils/extends'
 import { ReactComponent as HeroLogo } from '../../images/hero-logo.svg'
-import { ReactComponent as Arrow } from '../../images/arrow.svg'
+import { scale } from '../../utils/typography'
+import SVG from '../svg'
+
 // import './hero.scss'
 
 const HeroLayout = styled.div`
@@ -20,7 +22,6 @@ const HeroContainer = styled.div`
 `
 
 const HeroContent = styled.div`
-  width: 40%;
   color: ${theme.primary};
 
   @media (max-width: ${breakpoint.medium}) {
@@ -28,11 +29,11 @@ const HeroContent = styled.div`
   }
 
   h1 {
-    font-size: 74px;
-    max-width: 520px;
+    ${scale(0.95)}
+    max-width: 600px;
 
    @media (max-width: ${breakpoint.medium}) {
-      font-size: 40px;
+      ${scale(0.5)}
     }
   }
 
@@ -63,7 +64,7 @@ const HeroMark = styled.div`
 const HeroArrow = styled.a`
   position: absolute;
   color: ${theme.primary};
-  left: 20px;
+  left: 50px;
   bottom: 50px;
 `
 
@@ -78,7 +79,7 @@ const Hero = () => (
         {/* <p className="hero-text">We're a passionate studio, dedicating to craft your online experience in all aspects of the web. Accessibility is our number one priority.</p> */}
       </HeroContent>
       <HeroArrow href="#">
-        <Arrow />
+        <SVG icon="arrow" width="40" />
       </HeroArrow>
     </HeroContainer>
   </HeroLayout>

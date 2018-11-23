@@ -5,7 +5,7 @@ const typography = new Typography({
   baseLineHeight: 1.666,
   headerFontFamily: ['Colfax', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
   headerWeight: 500,
-  scaleRatio: 4.25,
+  scaleRatio: 4,
   bodyFontFamily: ['Colfax', 'serif'],
   // See below for the full list of options.
 })
