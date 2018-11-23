@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero/hero'
 import Services from '../components/Services/services'
 import Companies from '../components/companies'
+import Img from '../components/image'
 // import { rhythm } from '../utils/typography'
 
 const IndexPage = () => (

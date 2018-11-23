@@ -4,11 +4,13 @@ import { theme, breakpoint } from '../utils/colors'
 import { Container, Divider, SectionHeader } from '../utils/extends'
 import { rhythm } from '../utils/typography'
 
+// Logos
+import GooglePlus from '../images/gatsby-astronaut.png';
+import Mogl from '../images/gatsby-astronaut.png';
+import MerryJane from '../images/gatsby-astronaut.png';
+
 // Icons
 import SVG from './svg'
-
-const ServiceItem = styled.li`
-`
 
 const CompaniesLayout = styled.div`
   background: ${theme.white};
@@ -31,9 +33,21 @@ const CompanyList = styled.ul`
   }
 `
 
-const CompanyItem = ({ name, link, type, alt}) => (
+const CompanyItemImage = ({ name, image, width, link }) => (
   <li>
-    { type === 'svg' ? <SVG icon={name} width="200" /> : name }
+    {link ?
+      <a href={link}>
+        <img src={image} alt={name} width={width} />
+      </a>
+    :
+      <img src={image} alt={name} width={width} />
+    }
+  </li>
+)
+
+const CompanyItemSVG = ({ logo }) => (
+  <li>
+    <SVG icon={logo} width="200" />
   </li>
 )
 
@@ -47,11 +61,11 @@ const Companies = () => (
       </SectionHeader>
       <CompanyList>
 
-        <CompanyItem name="Mogl" />
+        <CompanyItemImage name="Mogl" image={GooglePlus} link="http://google.com" width="500" />
 
-        <CompanyItem name="Mogl" />
+        <CompanyItemImage name="Mogl" />
 
-        <CompanyItem name="menu" type="svg" />
+        <CompanyItemSVG logo="marketing" />
 
       </CompanyList>
     </div>
