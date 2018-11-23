@@ -8,7 +8,7 @@ export const theme = {
   primary: colors.sunshine,
   secondary: colors.midnight,
   white: colors.white,
-  maxWidth: '1400px',
+  maxWidth: '1280px',
 }
 
 export const textColor = {

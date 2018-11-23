@@ -1,8 +1,9 @@
 const path = require(`path`)
+const siteConfig = require(`./src/content/services`)
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    ...siteConfig,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
