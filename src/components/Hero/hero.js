@@ -14,7 +14,7 @@ const Hero = () => (
       <div className="hero-content">
         <h1 className="hero-title">A marketing and branding agency</h1>
       </div>
-      <a className="hero-arrow" href="#">
+      <a className="hero-arrow" href="#hello">
         <SVG icon="arrow" width={40} />
       </a>
     </div>

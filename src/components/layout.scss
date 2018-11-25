@@ -13,11 +13,11 @@ h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 2.4em;
 }
 
 h3 {
@@ -32,17 +32,37 @@ h5, h6 {
   font-size: 1em;
 }
 
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 p {
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+
+.yellow {
+  background: $color-primary;
 }
 
 .container {
   @extend %container;
 }
 
+.section-container {
+  @extend %container, %section-container;
+}
+
+.divider {
+  width: 120px;
+  padding-bottom: 50px;
+  border-top: 2px solid $color-secondary;
+  border-color: inherit;
+}
+
 .section-header {
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 
   .text {
     max-width: 75%;

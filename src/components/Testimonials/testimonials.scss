@@ -1,0 +1,29 @@
+.testimonials {
+  position: relative;
+  background: $color-background;
+  color: $color-primary;
+  overflow: hidden;
+
+  .container {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+
+.testimonial-quote {
+  width: 60%;
+  font-size: 1.4em;
+
+}
+
+.testimonial-details {
+  font-size: 20px;
+}
+
+.blockquote-svg {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+  height: 120%;
+  transform: translateY(-50%);
+}

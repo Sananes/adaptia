@@ -1,24 +1,23 @@
 import React from 'react'
 import './companies.scss'
 import { StaticQuery } from 'gatsby'
+import { SectionHeader } from '../../utils/shared'
 import Img from 'gatsby-image'
-
-// Logos
-import GoDaddy from '../../images/logos/godaddy-pro.png'
-import Mogl from '../../images/logos/moglcom.png'
-import MerryJane from '../../images/logos/merryjane.png'
-import Persista from '../../images/logos/persista.png'
-import HootSuite from '../../images/logos/hootsuite.png'
+import SVG from '../svg'
 
 const CompanyItemImage = ({ name, image, width, link }) => (
   <li className="company-item">
-    {link ? (
       <a href={link}>
         <Img fluid={image} />
       </a>
-    ) : (
-      <Img fluid={image} />
-    )}
+  </li>
+)
+
+const CompanyItemSVG = ({ name, link }) => (
+  <li className="company-item">
+      <a href={link}>
+        <SVG icon={name} strokeWidth={0} />
+      </a>
   </li>
 )
 
@@ -28,7 +27,14 @@ const Companies = name => (
       query {
         godaddy: file(relativePath: { eq: "logos/godaddy-pro.png" }) {
           childImageSharp {
-            fluid(maxHeight: 50) {
+            fluid(maxHeight: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        hootsuite: file(relativePath: { eq: "logos/hootsuite.png" }) {
+          childImageSharp {
+            fluid(maxHeight: 300) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -74,23 +80,19 @@ const Companies = name => (
     `}
     render={data => (
       <section className="companies">
-        <div className="companies-container">
-          <div className="section-header">
-            <div className="divider" />
-            <h2 className="title">We've worked with these companies</h2>
-            <p className="text">
-              We specialize in working with a range of companies from Silicon
-              Valley startups to some of the largest media brands in the world.
-            </p>
-          </div>
+        <div className="section-container">
+          <SectionHeader
+            title="We've worked with these companies"
+            text="We specialize in working with a range of companies from Silicon
+              Valley startups to some of the largest media brands in the world."
+          />
 
           <h4>Clients</h4>
 
           <div className="companies-list">
-            <CompanyItemImage
-              name="GoDaddy Pro"
-              image={data.godaddy.childImageSharp.fluid}
-              link="http://google.com"
+            <CompanyItemSVG
+              name="disney"
+              link="http://disneymaker.com"
             />
 
             <CompanyItemImage
@@ -109,12 +111,42 @@ const Companies = name => (
             />
 
             <CompanyItemImage
-              name="Persista"
-              image={data.persista.childImageSharp.fluid}
+              name="Mogl"
+              image={data.mogl.childImageSharp.fluid}
+              width={120}
             />
           </div>
 
           <h4>Partners</h4>
+
+          <div className="companies-list">
+            <CompanyItemSVG
+              name="google"
+              link="http://google.com"
+            />
+            <CompanyItemImage
+              name="GoDaddy Pro"
+              image={data.godaddy.childImageSharp.fluid}
+              link="http://google.com"
+            />
+
+            <CompanyItemSVG
+              name="shopify"
+              link="http://shopify.com"
+            />
+
+            <CompanyItemImage
+              name="HootSuite"
+              image={data.hootsuite.childImageSharp.fluid}
+              link="http://hootsuite.com"
+            />
+
+            <CompanyItemImage
+              name="Bing"
+              image={data.bing.childImageSharp.fluid}
+              link="http://bing.com"
+            />
+          </div>
         </div>
       </section>
     )}

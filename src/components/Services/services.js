@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { SectionHeader } from '../../utils/shared'
 // Assets
 import SVG from '../svg'
 import './services.scss'
@@ -14,12 +14,11 @@ const ServiceItem = ({icon, title, text}) => (
 
 const Services = () => (
   <section className="services">
-    <div className="container">
-      <div className="section-header">
-        <div className="divider"></div>
-        <h2 className="title">What we do</h2>
-        <p className="text">We deliver robust marketing and design services to some of the biggest and most influential brands and businesses with an entrepreneurial spirit. We’ve successfully built startup projects and seen them through acquisition, grown traffic for major web properties and designed some of the most cutting edge e-commerce experiences.</p>
-      </div>
+    <div className="section-container">
+      <SectionHeader
+        title="What we do"
+        text="We deliver robust marketing and design services to some of the biggest and most influential brands and businesses with an entrepreneurial spirit. We’ve successfully built startup projects and seen them through acquisition, grown traffic for major web properties and designed some of the most cutting edge e-commerce experiences."
+      />
       <ul className="service-list">
         <ServiceItem
           icon="marketing"
