@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionHeader } from '../../utils/shared';
+// import { SectionHeader } from '../../utils/shared';
 
 import './contact.scss'
 const Contact = ({color}) => (

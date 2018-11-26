@@ -1,4 +1,5 @@
 import React from 'react'
+import Reveal from 'react-reveal/Reveal'
 import { SectionHeader } from '../../utils/shared'
 
 // Assets
@@ -18,7 +19,9 @@ const Testimonials = (props) => (
         </div>
       </div>
     </div>
-    <BlockquoteSVG className="blockquote-svg" />
+    <Reveal effect="animate-svg">
+      <BlockquoteSVG className="blockquote-svg" />
+    </Reveal>
   </section>
 )
 

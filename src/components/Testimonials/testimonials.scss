@@ -26,4 +26,12 @@
   right: -8%;
   height: 120%;
   transform: translateY(-50%);
+
+  .animate-svg & {
+    animation-name: dash;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    animation: dash 3s both ease-in-out;
+  }
 }

@@ -1,24 +1,33 @@
 import React from 'react'
-import './companies.scss'
-import { StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
+import Reveal from 'react-reveal/Reveal';
+import Fade from 'react-reveal/Fade';
+// import { keyframes } from 'react-emotion'
+
+// Shared Assets
 import { SectionHeader } from '../../utils/shared'
 import Img from 'gatsby-image'
 import SVG from '../svg'
+import './companies.scss'
 
-const CompanyItemImage = ({ name, image, width, link }) => (
-  <li className="company-item">
-      <a href={link}>
-        <Img fluid={image} />
-      </a>
-  </li>
+const CompanyItemImage = ({ name, image, width, link, delay }) => (
+  <Reveal effect="fadeInUp" delay={delay}>
+    <li className="company-item">
+        <a href={link}>
+          <Img fluid={image} />
+        </a>
+    </li>
+  </Reveal>
 )
 
-const CompanyItemSVG = ({ name, link }) => (
-  <li className="company-item">
-      <a href={link}>
-        <SVG icon={name} strokeWidth={0} />
-      </a>
-  </li>
+const CompanyItemSVG = ({ name, link, delay }) => (
+  <Reveal effect="fadeInUp" delay={delay}>
+    <li className="company-item">
+        <a href={link}>
+          <SVG icon={name} strokeWidth={0} />
+        </a>
+    </li>
+  </Reveal>
 )
 
 const Companies = name => (
@@ -93,27 +102,32 @@ const Companies = name => (
             <CompanyItemSVG
               name="disney"
               link="http://disneymaker.com"
+              delay={0}
             />
 
             <CompanyItemImage
               name="Persista"
               image={data.persista.childImageSharp.fluid}
+              delay={100}
             />
 
             <CompanyItemImage
               name="MerryJane"
               image={data.merryjane.childImageSharp.fluid}
+              delay={200}
             />
 
             <CompanyItemImage
               name="Internet Brands"
               image={data.internetbrands.childImageSharp.fluid}
+              delay={300}
             />
 
             <CompanyItemImage
               name="Mogl"
               image={data.mogl.childImageSharp.fluid}
               width={120}
+              delay={400}
             />
           </div>
 
@@ -154,3 +168,29 @@ const Companies = name => (
 )
 
 export default Companies
+
+// class Order extends React.Component {
+//   renderOrder = (key) => {
+
+//     const fish = this.props.fishes[key]
+//     const count = this.props.order[key]
+//     const isAvailable = fish.status === 'available'
+
+//     if(!isAvailable) {
+//       <li>
+//         Sorry {fish ? fish.name : 'fish'} is no longer available
+//       </li>
+//     }
+//     return (
+//       <li>
+//       {count} lbs {fish.name}
+//         {formatPrice(count * fish.price)}
+//       </li>
+//     )
+//   }
+//   render() {
+//     return (
+
+//     )
+//   }
+// }

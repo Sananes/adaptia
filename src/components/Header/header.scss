@@ -8,11 +8,11 @@
   .container {
     @extend %container;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr min-content;
+    place-items: center start;
   }
 }
 
 .header-menu {
-  place-self: end;
   color: $color-primary;
 }

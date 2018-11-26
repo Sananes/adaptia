@@ -27,6 +27,7 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <link rel="stylesheet" href="https://use.typekit.net/ayp3lpj.css"></link>
         </Helmet>
           <Header siteTitle={data.site.siteMetadata.title} />
         {children}
