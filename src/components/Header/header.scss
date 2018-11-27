@@ -5,6 +5,10 @@
   background: transparent;
   color: $color-primary;
 
+  @include breakpoint('small') {
+    padding: 10px 0;
+  }
+
   .container {
     @extend %container;
     display: grid;

@@ -9,6 +9,15 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    transform: translate3d(0, -20px, 0)
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes dash {
   from {
     stroke-dashoffset: 3800;
@@ -18,6 +27,10 @@
   }
 }
 
+.slide-up {
+  animation-name: slide-up;
+  animation-fill-mode: both;
+}
 
 .fadeInUp {
   animation-name: fadeInUp;

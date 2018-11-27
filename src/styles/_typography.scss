@@ -1,0 +1,58 @@
+
+
+%heading {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+%h1 {
+  @extend %heading;
+  @include font-size(48px, 64px);
+}
+
+%h2 {
+  @extend %heading;
+  @include font-size(32px, 48px);
+}
+
+%h3 {
+  @extend %heading;
+  @include font-size(20px, 24px);
+}
+
+%h4 {
+  @extend %heading;
+  @include font-size(20px, 28px);
+}
+
+%h5 {
+  @extend %heading;
+  @include font-size(18px, 20px);
+}
+
+%h6 {
+  @extend %heading;
+  @include font-size(24px, 32px);
+}
+
+%body {
+  @include font-size(18px, 20px);
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+%body-l {
+  @extend %body;
+  @include font-size(24px, 28px);
+}
+
+%body-m {
+  @extend %body;
+  @include font-size(20px, 24px);
+}
+
+%body-s {
+  @extend %body;
+  @include font-size(14px, 16px);
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Reveal from 'react-reveal/Reveal'
 import Layout from '../components/layout'
 import HeroSection from '../components/Hero/hero'
 import ServicesSection from '../components/Services/services'
@@ -8,11 +9,13 @@ import ContactSection from '../components/Contact/contact'
 
 const IndexPage = (props) => (
   <Layout>
-    <HeroSection />
-    <ServicesSection />
-    <CompaniesSection />
-    <TestimonialsSection />
-    <ContactSection color="yellow" />
+      <HeroSection />
+      <Reveal effect="slide-up">
+        <ServicesSection />
+        <CompaniesSection />
+        <TestimonialsSection />
+        <ContactSection color="yellow" />
+      </Reveal>
   </Layout>
 )
 

@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 // Assets
 import { ReactComponent as Logo } from '../../images/logo.svg'
-import SVG from '../svg'
+// import SVG from '../svg'
 import './header.scss'
 
 const Header = ({ siteTitle }) => (
@@ -18,11 +18,11 @@ const Header = ({ siteTitle }) => (
           </Link>
         </h1>
       </Reveal>
-      <Reveal effect="fadeInUp" delay={200}>
+      {/* <Reveal effect="fadeInUp" delay={200}>
         <button className="header-menu" href="#">
           <SVG icon="menu" />
         </button>
-      </Reveal>
+      </Reveal>*/}
     </div>
   </header>
 )

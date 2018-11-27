@@ -11,13 +11,16 @@
 }
 
 .testimonial-quote {
+  @extend %body-l;
   width: 60%;
-  font-size: 1.4em;
 
+  @include breakpoint('small') {
+    width: 100%;
+  }
 }
 
 .testimonial-details {
-  font-size: 20px;
+  @extend %body;
 }
 
 .blockquote-svg {
@@ -26,6 +29,10 @@
   right: -8%;
   height: 120%;
   transform: translateY(-50%);
+
+  @include breakpoint('small') {
+    display: none;
+  }
 
   .animate-svg & {
     animation-name: dash;

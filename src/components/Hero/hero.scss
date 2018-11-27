@@ -24,11 +24,9 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
 }
-
-
 
 .hero {
   background: $color-background;
@@ -39,31 +37,39 @@
     display: grid;
     grid-template-rows: 1fr min-content;
     align-items: center;
-    width: 100vw;
     height: 100vh;
     overflow: hidden;
   }
 }
 
 .hero-content {
-  width: 40%;
   margin-top: 100px;
+
+  @include breakpoint('small') {
+    .hero-animate & {
+      width: 100%;
+      animation: fadeInUp 0.4s ease-in-out both 1s;
+    }
+  }
 }
 
 .hero-title {
-  font-size: 74px;
   max-width: 520px;
 
   .reveal {
     position: relative;
+    display: block;
+    overflow: hidden;
 
-
+    &.first:before {
+      animation-delay: 1s;
+    }
     &.second:before {
-      animation-delay: 0.5s;
+      animation-delay: 1.5s;
     }
 
     &.third:before {
-      animation-delay: 1s;
+      animation-delay: 2s;
     }
   }
 
@@ -76,15 +82,15 @@
     background: $color-background;
     content: "";
 
-    .animate-hero & {
-      animation-name: moveAway;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
+    @include breakpoint('small') {
+      background: none;
     }
-  }
 
-  .animate-hero & {
-    animation-name: bounce;
+    .hero-animate & {
+      animation-name: moveAway;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+    }
   }
 }
 
@@ -112,7 +118,10 @@
 }
 
 .hero-arrow {
-  animation: bounce 3s ease-in-out forwards infinite;
   padding-bottom: 50px;
   color: $color-primary;
+
+  .hero-animate & {
+    animation: fadeInUp 0.5s ease-in-out both 1s, bounce 3s ease-in-out both infinite;
+  }
 }

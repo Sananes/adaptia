@@ -12,6 +12,10 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 48px;
 
+  @include breakpoint('medium') {
+    grid-template-columns: 100%;
+  }
+
   svg {
     margin-bottom: 20px;
   }

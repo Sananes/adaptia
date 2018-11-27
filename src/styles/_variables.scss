@@ -7,3 +7,9 @@ $color-secondary: $color-midnight;
 $color-background: $color-midnight;
 
 $color-text: $color-secondary;
+
+$breakpoints: (
+  'small':  ( max-width:  767px ),
+  'medium': ( max-width:  992px ),
+  'large':  ( max-width: 1200px )
+) !default;

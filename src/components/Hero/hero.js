@@ -1,5 +1,7 @@
 import React from 'react'
 import Reveal from 'react-reveal/Reveal'
+import { scroller } from 'react-scroll'
+
 
 // Assets
 import { ReactComponent as HeroLogo } from '../../images/hero-logo.svg'
@@ -7,7 +9,7 @@ import SVG from '../svg'
 import './hero.scss'
 
 const Hero = () => (
-  <Reveal effect="animate-hero">
+  <Reveal ssrFadeout effect="hero-animate">
     <section className="hero">
       <div className="hero-logo">
         <HeroLogo />
@@ -19,11 +21,13 @@ const Hero = () => (
               <span className="reveal second">and branding </span>
               <span className="reveal third">agency</span></h1>
           </div>
-          <Reveal effect="fadeInUp">
-            <a className="hero-arrow" href="#hello">
-              <SVG icon="arrow" width={40} />
-            </a>
-          </Reveal>
+          <button onClick={() => scroller.scrollTo('services', {
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOut'
+          })} className="hero-arrow">
+            <SVG icon="arrow" width={40} />
+          </button>
         </div>
     </section>
   </Reveal>

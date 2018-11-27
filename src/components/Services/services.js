@@ -1,6 +1,5 @@
 import React from 'react'
 import Reveal from 'react-reveal/Reveal'
-import Fade from 'react-reveal/Fade'
 import { SectionHeader } from '../../utils/shared'
 
 // Assets

@@ -13,7 +13,12 @@
   padding-top: 150px;
   padding-bottom: 150px;
 
-  @media (max-width: 500px) {
+  @include breakpoint ('medium') {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  @include breakpoint ('medium') {
     padding-top: 80px;
     padding-bottom: 80px;
   }

@@ -1,8 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Reveal from 'react-reveal/Reveal';
-import Fade from 'react-reveal/Fade';
-// import { keyframes } from 'react-emotion'
 
 // Shared Assets
 import { SectionHeader } from '../../utils/shared'
@@ -10,7 +8,7 @@ import Img from 'gatsby-image'
 import SVG from '../svg'
 import './companies.scss'
 
-const CompanyItemImage = ({ name, image, width, link, delay }) => (
+const CompanyItemImage = ({ image, link, delay }) => (
   <Reveal effect="fadeInUp" delay={delay}>
     <li className="company-item">
         <a href={link}>
@@ -37,42 +35,42 @@ const Companies = name => (
         godaddy: file(relativePath: { eq: "logos/godaddy-pro.png" }) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         hootsuite: file(relativePath: { eq: "logos/hootsuite.png" }) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         mogl: file(relativePath: { eq: "logos/moglcom.png" }) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         merryjane: file(relativePath: { eq: "logos/merryjane.png" }) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         bing: file(relativePath: { eq: "logos/bing-certified-pro.png" }) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
         persista: file(relativePath: { eq: "logos/persista.png" }) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -81,7 +79,7 @@ const Companies = name => (
         ) {
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -98,7 +96,7 @@ const Companies = name => (
 
           <h4>Clients</h4>
 
-          <div className="companies-list">
+          <ul className="companies-list">
             <CompanyItemSVG
               name="disney"
               link="http://disneymaker.com"
@@ -129,11 +127,11 @@ const Companies = name => (
               width={120}
               delay={400}
             />
-          </div>
+          </ul>
 
           <h4>Partners</h4>
 
-          <div className="companies-list">
+          <ul className="companies-list">
             <CompanyItemSVG
               name="google"
               link="http://google.com"
@@ -160,7 +158,7 @@ const Companies = name => (
               image={data.bing.childImageSharp.fluid}
               link="http://bing.com"
             />
-          </div>
+          </ul>
         </div>
       </section>
     )}
@@ -168,29 +166,3 @@ const Companies = name => (
 )
 
 export default Companies
-
-// class Order extends React.Component {
-//   renderOrder = (key) => {
-
-//     const fish = this.props.fishes[key]
-//     const count = this.props.order[key]
-//     const isAvailable = fish.status === 'available'
-
-//     if(!isAvailable) {
-//       <li>
-//         Sorry {fish ? fish.name : 'fish'} is no longer available
-//       </li>
-//     }
-//     return (
-//       <li>
-//       {count} lbs {fish.name}
-//         {formatPrice(count * fish.price)}
-//       </li>
-//     )
-//   }
-//   render() {
-//     return (
-
-//     )
-//   }
-// }
