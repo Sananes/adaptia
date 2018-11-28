@@ -8,21 +8,21 @@ import Img from 'gatsby-image'
 import SVG from '../svg'
 import './companies.scss'
 
-const CompanyItemImage = ({ image, link, delay }) => (
+const CompanyItemImage = ({ name, image, link, delay }) => (
   <Reveal effect="fadeInUp" delay={delay}>
     <li className="company-item">
         <a href={link}>
-          <Img fluid={image} />
+          <Img fluid={image} alt={name} />
         </a>
     </li>
   </Reveal>
 )
 
-const CompanyItemSVG = ({ name, link, delay }) => (
+const CompanyItemSVG = ({ icon, link, delay }) => (
   <Reveal effect="fadeInUp" delay={delay}>
     <li className="company-item">
         <a href={link}>
-          <SVG icon={name} strokeWidth={0} />
+          <SVG icon={icon} strokeWidth={0} />
         </a>
     </li>
   </Reveal>
@@ -80,7 +80,7 @@ const Companies = name => (
 
           <ul className="companies-list">
             <CompanyItemSVG
-              name="disney"
+              icon="disney"
               link="http://disneymaker.com"
               delay={0}
             />
@@ -119,7 +119,7 @@ const Companies = name => (
 
           <ul className="companies-list">
             <CompanyItemSVG
-              name="google"
+              icon="google"
               link="http://www.google.com"
             />
             <CompanyItemImage
@@ -129,7 +129,7 @@ const Companies = name => (
             />
 
             <CompanyItemSVG
-              name="shopify"
+              icon="shopify"
               link="http://www.shopify.com"
             />
 
