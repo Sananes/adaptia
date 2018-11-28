@@ -15,7 +15,7 @@ const Testimonials = (props) => (
 
         <div className="testimonial-details">
           <p>Christiane S.
-          <span class="testimonial-person">Owner of <a href="http://www.bonpastry.com">BonPastry.com</a></span></p>
+          <span className="testimonial-person">Owner of <a href="http://www.bonpastry.com">BonPastry.com</a></span></p>
         </div>
       </div>
     </div>
