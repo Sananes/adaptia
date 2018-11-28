@@ -54,6 +54,7 @@
 }
 
 .hero-title {
+  @extend %display-1;
   max-width: 520px;
 
   .reveal {
