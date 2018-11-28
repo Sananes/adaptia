@@ -28,60 +28,42 @@ const CompanyItemSVG = ({ name, link, delay }) => (
   </Reveal>
 )
 
+export const logoImage = graphql`
+fragment logoImage on File {
+  childImageSharp {
+    fluid(maxWidth: 300) {
+      ...GatsbyImageSharpFluid_tracedSVG
+    }
+  }
+}
+`
+
 const Companies = name => (
   <StaticQuery
     query={graphql`
       query {
         godaddy: file(relativePath: { eq: "logos/godaddy-pro.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
         hootsuite: file(relativePath: { eq: "logos/hootsuite.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
         mogl: file(relativePath: { eq: "logos/moglcom.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
         merryjane: file(relativePath: { eq: "logos/merryjane.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
         bing: file(relativePath: { eq: "logos/bing-certified-pro.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
         persista: file(relativePath: { eq: "logos/persista.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
         internetbrands: file(
           relativePath: { eq: "logos/internet-brands.png" }
         ) {
-          childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+          ...logoImage
         }
       }
     `}
@@ -105,18 +87,21 @@ const Companies = name => (
 
             <CompanyItemImage
               name="Persista"
+              link="http://camino.ai"
               image={data.persista.childImageSharp.fluid}
               delay={100}
             />
 
             <CompanyItemImage
               name="MerryJane"
+              link="http://www.merryjane.com"
               image={data.merryjane.childImageSharp.fluid}
               delay={200}
             />
 
             <CompanyItemImage
               name="Internet Brands"
+              link="http://www.internetbrands.com"
               image={data.internetbrands.childImageSharp.fluid}
               delay={300}
             />
@@ -124,6 +109,7 @@ const Companies = name => (
             <CompanyItemImage
               name="Mogl"
               image={data.mogl.childImageSharp.fluid}
+              link="http://www.mogl.com"
               width={120}
               delay={400}
             />
@@ -134,17 +120,17 @@ const Companies = name => (
           <ul className="companies-list">
             <CompanyItemSVG
               name="google"
-              link="http://google.com"
+              link="http://www.google.com"
             />
             <CompanyItemImage
               name="GoDaddy Pro"
               image={data.godaddy.childImageSharp.fluid}
-              link="http://google.com"
+              link="http://www.godaddy.com"
             />
 
             <CompanyItemSVG
               name="shopify"
-              link="http://shopify.com"
+              link="http://www.shopify.com"
             />
 
             <CompanyItemImage
@@ -156,7 +142,7 @@ const Companies = name => (
             <CompanyItemImage
               name="Bing"
               image={data.bing.childImageSharp.fluid}
-              link="http://bing.com"
+              link="http://www.bing.com"
             />
           </ul>
         </div>
