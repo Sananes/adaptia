@@ -12,7 +12,8 @@
 
 .testimonial-quote {
   @extend %body-l;
-  width: 60%;
+  margin-top: -50px;
+  width: 50%;
 
   @include breakpoint('small') {
     width: 100%;
