@@ -39,6 +39,14 @@ const icons = {
     ),
     viewBox: '0 0 48 48',
   },
+  close: {
+    shape: (
+      <React.Fragment>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 5L5 15M5 5l10 10"/>
+      </React.Fragment>
+    ),
+    viewBox: '0 0 24 24',
+  },
   menu: {
     shape: (
       <React.Fragment>

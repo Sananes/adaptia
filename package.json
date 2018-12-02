@@ -33,6 +33,7 @@
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.7.10",
     "react-scrollspy": "^3.3.5",
+    "react-transition-group": "^2.5.0",
     "react-typography": "^0.16.13",
     "styled-components": "^4.1.1",
     "typography": "^0.16.17"

@@ -10,6 +10,7 @@
 %display-1 {
   @extend %heading;
   @include font-size(48px, 72px)
+  letter-spacing: -0.5px;
 }
 
 %h1 {
